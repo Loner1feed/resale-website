@@ -131,6 +131,95 @@
       // max-width: 300px;
     }
   }
+
+  .catalogGrid {
+    &__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .productCard {
+    &__wrap {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__info {
+      margin-left: 0;
+      margin-top: 30px;
+      max-width: 500px;
+    }
+
+    &__gallerySlider{
+      max-width: 500px;
+      width: 100%;
+    }
+  }
+
+  .gallerySlider{
+    &__nav{
+      display: none !important;
+    }
+
+    &__for {
+      width: 100%;
+      .slick-dots {
+        display: flex;
+        justify-content: center;
+        li button {
+          background: transparent;
+          margin: 0px 5px;
+          border: none;
+          font-size: 0;
+          width: 0;
+          height: 0;
+          position: relative;
+          &::after {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: #000;
+            opacity: 0.4;
+            border-radius: 50%;
+            position: absolute;
+            right: 50%;
+            top: 50%;
+            transform: translate(50%, 50%);
+            transition: 0.3s;
+          }
+        }
+
+        li.slick-active button::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .productDesc{
+    &__grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &__wrap {
+      padding-top: 40px;
+      padding-bottom: 60px;
+    }
+
+    section:first-child,
+    section:nth-child(2),
+    section:last-child {
+      padding: 0;
+      &::after {
+        display: none;
+      }
+    }
+
+    section:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
 }
 
 
@@ -282,6 +371,91 @@
       margin: 0px auto;
     }
   }
+
+  .catalogGrid {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__wrap {
+      padding-top: 20px;
+      padding-bottom: 40px;
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+
+  .productCard {
+    &__wrap {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+
+  .productDesc {
+
+    &__wrap {
+      padding-bottom: 30px;
+    }
+
+    section {
+      &:not(:last-child) {
+        margin: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);;
+      }
+      h5 {
+        padding: 24px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        cursor: pointer;
+      }
+
+      p {
+        // overflow: hidden;
+        // height: 0;
+        display: none;
+        padding-bottom: 24px;
+      }
+    }
+
+    &__plus {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 15px;
+      height: 15px;
+      span {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: #000;
+        transition: 0.3s;
+        &:last-child{
+          transform: rotate(90deg);
+        }
+      }
+
+      &--minus {
+        span:last-child {
+          transform: rotate(0deg);
+          // opacity: 0;
+        }
+      }
+    }
+  }
+
+  .subForm {
+    &__wrap {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -295,9 +469,63 @@
     }
   }
 
+  .productCard {
+    &__wrap {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+
+  .productDesc {
+    &__wrap {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+
   .productGrid{
     &__grid{
       grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .catalogGrid {
+    &__grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &__wrap {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+
+
+  .productTop {
+    &__wrap {
+      padding-top: 40px;
+      padding-bottom: 10px;
+    }
+  }
+
+  .crumbs {
+    display: none;
+  }
+
+  .navButtons {
+    display: none;
+  }
+
+  .backButton {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    font-size: 22px;  
+    span {
+      transform: rotate(-180deg);
+      margin-right: 10px;
     }
   }
 }
