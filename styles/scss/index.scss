@@ -917,12 +917,18 @@ body {
             padding-top: 0 !important;
         }
         .slick-slide {
+            border: 1px solid $accentOrange !important;
+            transition: 0.3s border;
+            &.slick-current {
+                border: 1px solid #000 !important;
+            }
             &:not(:last-child) {
                 margin-bottom: 15px;
             }
         }
         img {
             width: 100%;
+
         }
     }
 

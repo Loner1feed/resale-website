@@ -866,6 +866,14 @@ body.locked {
 .gallerySlider__nav .slick-list {
   padding-top: 0 !important;
 }
+.gallerySlider__nav .slick-slide {
+  border: 1px solid #F87D33 !important;
+  -webkit-transition: 0.3s border;
+  transition: 0.3s border;
+}
+.gallerySlider__nav .slick-slide.slick-current {
+  border: 1px solid #000 !important;
+}
 .gallerySlider__nav .slick-slide:not(:last-child) {
   margin-bottom: 15px;
 }
